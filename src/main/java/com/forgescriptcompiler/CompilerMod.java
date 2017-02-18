@@ -43,8 +43,8 @@ public class CompilerMod
     @EventHandler
     public void preinit(FMLPreInitializationEvent event)
     {
-    	Proxy.preInit();
-		EntityRegistry.registerModEntity(new ResourceLocation(MODID, ROBOT_TEXTURE_LOCATION), EntityRobot.class, "EntityTest", 255, Instance, 64, 1, true);
+        Proxy.preInit();
+        EntityRegistry.registerModEntity(new ResourceLocation(MODID, ROBOT_TEXTURE_LOCATION), EntityRobot.class, "EntityTest", 255, Instance, 64, 1, true);
     }
     
     @EventHandler

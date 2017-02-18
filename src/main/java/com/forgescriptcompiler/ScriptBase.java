@@ -23,8 +23,8 @@ public abstract class ScriptBase
         BlockPos spawnPosition = this._player.getPosition();
         do
         {
-        	this._scriptedEntity.setPosition(spawnPosition.getX() + world.rand.nextInt(5), spawnPosition.getY(), spawnPosition.getZ() + world.rand.nextInt(5));
-        	
+            this._scriptedEntity.setPosition(spawnPosition.getX() + world.rand.nextInt(5), spawnPosition.getY(), spawnPosition.getZ() + world.rand.nextInt(5));
+            
             switch (_world.rand.nextInt() % 4)
             {
             case 0:
@@ -124,7 +124,7 @@ public abstract class ScriptBase
     
     protected int distanceToOwner()
     {
-    	return (int) _scriptedEntity.getDistanceToEntity(_player);
+        return (int) _scriptedEntity.getDistanceToEntity(_player);
     }
     
     protected synchronized void navigateToOwner()

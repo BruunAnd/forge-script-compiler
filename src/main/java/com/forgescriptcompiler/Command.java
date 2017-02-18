@@ -24,7 +24,7 @@ public class Command
     
     public synchronized void waitForHasBeenExecuted()  throws InterruptedException
     {
-    	long now = System.currentTimeMillis();
+        long now = System.currentTimeMillis();
         while (!HasBeenExecuted && (System.currentTimeMillis() - now) < 500) wait();
     }
 }

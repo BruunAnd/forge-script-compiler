@@ -48,22 +48,22 @@ public class EntityRobot extends EntityCreature implements IWorldNameable, IEnti
     
     public EntityRobot(World worldIn, EntityPlayer owner)
     {
-    	this(worldIn);
-    	
-    	_name = CompilerMod.NAMES[this.rand.nextInt(CompilerMod.NAMES.length)] + " @ " + owner.getName();
-    	CompilerMod.CHILD_ENTITIES.add(this.getUniqueID());
+        this(worldIn);
+        
+        _name = CompilerMod.NAMES[this.rand.nextInt(CompilerMod.NAMES.length)] + " @ " + owner.getName();
+        CompilerMod.CHILD_ENTITIES.add(this.getUniqueID());
     }
     
     @Override
     public void onEntityUpdate()
     {
-    	// Remove entity if not spawned in this server instance
-    	if (this._tickCounter++ == 0 && !this.world.isRemote && !CompilerMod.CHILD_ENTITIES.contains(this.getUniqueID()))
-    	{
-    		this.world.removeEntity(this);
-    		return;
-    	}
-    	
+        // Remove entity if not spawned in this server instance
+        if (this._tickCounter++ == 0 && !this.world.isRemote && !CompilerMod.CHILD_ENTITIES.contains(this.getUniqueID()))
+        {
+            this.world.removeEntity(this);
+            return;
+        }
+        
         // Poll next command
         Command nextCommand = CommandQueue.poll();
         if (nextCommand != null)
@@ -180,15 +180,15 @@ public class EntityRobot extends EntityCreature implements IWorldNameable, IEnti
         return SoundEvents.ENTITY_SHEEP_STEP;
     }
     
-	@Override
-	public void writeSpawnData(ByteBuf buffer)
-	{
-		ByteBufUtils.writeUTF8String(buffer, _name);
-	}
+    @Override
+    public void writeSpawnData(ByteBuf buffer)
+    {
+        ByteBufUtils.writeUTF8String(buffer, _name);
+    }
 
-	@Override
-	public void readSpawnData(ByteBuf additionalData)
-	{
-		_name = ByteBufUtils.readUTF8String(additionalData);
-	}
+    @Override
+    public void readSpawnData(ByteBuf additionalData)
+    {
+        _name = ByteBufUtils.readUTF8String(additionalData);
+    }
 }
