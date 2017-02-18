@@ -1,0 +1,16 @@
+[
+{
+  "modid": "compilermod",
+  "name": "Compiler Mod",
+  "description": "Enables compilation of Minecraft scripts at runtime.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["andersjkbsn"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
